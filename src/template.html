@@ -299,18 +299,17 @@ var UI = {
   lat:{en:'Position',pl:'Pozycja'}, alt:{en:'Altitude',pl:'Wysokość'}, scale:{en:'Scale',pl:'Skala'},
   chapter:{en:'Chapter',pl:'Rozdział'}, tplus:{en:'T+ since EU accession · 1 May 2004',pl:'T+ od wejścia do UE · 1 maja 2004'},
   srcTitle:{en:'Sources',pl:'Źródła'},
-  srcNote:{en:'Every figure comes from the Poland positive content bank (191 evidence cards, research date 1 October 2026). Badges show what kind of evidence each figure is: measured statistics, company or operator data, forecasts, or claims reported in the added Polish report that still await an independent check. Figures marked “essay” are quoted from the original September essay.',
-           pl:'Każda liczba pochodzi z bazy pozytywnych treści o Polsce (191 kart dowodowych, stan na 1 października 2026). Etykiety mówią, jakiego rodzaju to dowód: zmierzona statystyka, dane firmy lub operatora, prognoza albo informacja z dołączonego polskiego raportu, która czeka jeszcze na niezależną weryfikację. Liczby oznaczone „esej” pochodzą z oryginalnego wrześniowego eseju.'},
+  srcNote:{en:'Every figure links to its original publisher below; figures are as of 1 October 2026. Badges show what kind of evidence each figure is: measured statistics, company or operator data, forecasts, or claims from secondary reporting that still await an independent check. Figures marked “essay” are quoted from the original September essay.',
+           pl:'Każda liczba ma podane poniżej źródło u pierwotnego wydawcy; dane według stanu na 1 października 2026. Etykiety mówią, jakiego rodzaju to dowód: zmierzona statystyka, dane firmy lub operatora, prognoza albo informacja z opracowań wtórnych, która czeka jeszcze na niezależną weryfikację. Liczby oznaczone „esej” pochodzą z oryginalnego wrześniowego eseju.'},
   caveat:{en:'Boundary',pl:'Granica tezy'}, sources:{en:'Sources',pl:'Źródła'},
   readOrig:{en:'Read the September essay',pl:'Przeczytaj wrześniowy esej'},
-  explore:{en:'Explore all 191 facts',pl:'Zobacz wszystkie 191 faktów'},
   scroll:{en:'Scroll to begin',pl:'Przewiń, aby zacząć'},
   orig:{en:'The essay’s chapter',pl:'Rozdział eseju'}, reply:{en:'Our reply',pl:'Nasza odpowiedź'},
   y:{en:'y',pl:'l'}, d:{en:'d',pl:'d'}
 };
 var BADGES = {
   observed:{en:'Measured',pl:'Zmierzone'}, forecast:{en:'Forecast',pl:'Prognoza'}, company_reported:{en:'Company data',pl:'Dane firmy'},
-  reported_in_uploaded_document:{en:'Reported · to verify',pl:'Raport · do weryfikacji'}, operator_data:{en:'Operator data',pl:'Dane operatora'},
+  reported_in_uploaded_document:{en:'Reported · to verify',pl:'Doniesienia · do weryfikacji'}, operator_data:{en:'Operator data',pl:'Dane operatora'},
   operator_report:{en:'Operator data',pl:'Dane operatora'}, specialist_analysis:{en:'Analysis',pl:'Analiza'}, institutional_status:{en:'Official',pl:'Oficjalne'},
   service_available:{en:'Live service',pl:'Działająca usługa'}, announced_contract:{en:'Contract',pl:'Umowa'}, in_development:{en:'In development',pl:'W budowie'},
   programme:{en:'Programme',pl:'Program'}, verified_role:{en:'Verified',pl:'Potwierdzone'}, historical_credit:{en:'Historical record',pl:'Zapis historyczny'},
@@ -393,13 +392,13 @@ var STEPS = [
   charts:[{type:'bars', title:{en:'GDP growth, Q2 2026, year on year',pl:'Wzrost PKB, II kw. 2026 r/r'}, max:4, suf:'%', dec:1,
            rows:[{l:{en:'Poland',pl:'Polska'},v:3.7,hl:1},{l:{en:'United States',pl:'USA'},v:2.1},{l:{en:'EU',pl:'UE'},v:1.2}]},
           {type:'kpi', cols:2, items:[{v:6.7,dec:1,pre:'+',suf:'%',l:{en:'real income per person, 2025',pl:'realny dochód na osobę, 2025'}},{v:3.5,dec:1,suf:'%',l:{en:'EC growth forecast for 2026',pl:'prognoza KE na 2026'}}]}],
-  caveat:{en:'National growth is not a guarantee of individual prosperity. The Q2 figure comes from the added report; the 2026 forecast is labelled as one.',pl:'Wzrost w skali kraju nie gwarantuje zamożności każdego. Dane za II kwartał pochodzą z dołączonego raportu; prognoza na 2026 jest prognozą.'},
+  caveat:{en:'National growth is not a guarantee of individual prosperity. The Q2 figure comes from secondary reporting; the 2026 forecast is labelled as one.',pl:'Wzrost w skali kraju nie gwarantuje zamożności każdego. Dane za II kwartał pochodzą z opracowań wtórnych; prognoza na 2026 jest prognozą.'},
   src:['PL-136','PL-004','PL-006','PL-018']},
  {id:'consumption', view:'home', chap:'money',
   kicker:{en:'Households · 2016–2026',pl:'Gospodarstwa domowe · 2016–2026'},
   title:{en:'Household spending since 2016: +125%',pl:'Konsumpcja od 2016 roku: +125%'},
-  body:{en:'<p>The added report puts the growth of household consumption since 2016 at <b>125% in Poland</b>, against 40% in the euro area and Germany and 30% in the United Kingdom.</p><p>Consumer prices are <b>73% of the EU average</b>, the third-lowest level in the Union, so each złoty still goes further than a euro does in Berlin.</p>',
-        pl:'<p>Dołączony raport podaje, że od 2016 roku konsumpcja gospodarstw domowych wzrosła o <b>125% w Polsce</b>, wobec 40% w strefie euro i w Niemczech oraz 30% w Wielkiej Brytanii.</p><p>Ceny konsumpcyjne to <b>73% średniej UE</b>, trzeci najniższy poziom w Unii, więc złotówka wciąż starcza na więcej niż euro w Berlinie.</p>'},
+  body:{en:'<p>Secondary reporting puts the growth of household consumption since 2016 at <b>125% in Poland</b>, against 40% in the euro area and Germany and 30% in the United Kingdom.</p><p>Consumer prices are <b>73% of the EU average</b>, the third-lowest level in the Union, so each złoty still goes further than a euro does in Berlin.</p>',
+        pl:'<p>Opracowania wtórne podają, że od 2016 roku konsumpcja gospodarstw domowych wzrosła o <b>125% w Polsce</b>, wobec 40% w strefie euro i w Niemczech oraz 30% w Wielkiej Brytanii.</p><p>Ceny konsumpcyjne to <b>73% średniej UE</b>, trzeci najniższy poziom w Unii, więc złotówka wciąż starcza na więcej niż euro w Berlinie.</p>'},
   charts:[{type:'bars', title:{en:'Growth in household consumption since 2016',pl:'Wzrost konsumpcji gospodarstw od 2016'}, max:130, pre:'+', suf:'%',
            rows:[{l:{en:'Poland',pl:'Polska'},v:125,hl:1},{l:{en:'Euro area',pl:'Strefa euro'},v:40},{l:{en:'Germany',pl:'Niemcy'},v:40},{l:{en:'United Kingdom',pl:'Wielka Brytania'},v:30}]}],
   caveat:{en:'A reported figure: the endpoint and price basis are not stated in the source and still need checking.',pl:'Dane z raportu: punkt końcowy i podstawa cenowa nie są w źródle podane i wymagają sprawdzenia.'},
@@ -412,7 +411,7 @@ var STEPS = [
   charts:[{type:'waffles', title:{en:'Not at risk of poverty or exclusion, of every 100 people, 2025',pl:'Niezagrożeni ubóstwem lub wykluczeniem, na 100 osób, 2025'},
            items:[{v:85,l:{en:'Poland',pl:'Polska'},hl:1},{v:79,l:{en:'EU',pl:'UE'}}]},
           {type:'kpi', cols:2, items:[{v:9229,pre:'',suf:{en:' PLN',pl:' zł'},l:{en:'average gross pay, June 2026',pl:'przeciętna pensja brutto, VI 2026'}},{v:4.6,dec:1,suf:{en:'bn PLN',pl:' mld zł'},l:{en:'venture capital, H1 2026',pl:'kapitał VC, I półrocze 2026'}}]}],
-  caveat:{en:'The at-risk rate is a relative EU measure (15.0% in Poland, 20.9% in the EU), not an absolute poverty line. Pay and VC figures are from the added report.',pl:'Wskaźnik zagrożenia to miara względna UE (15,0% w Polsce, 20,9% w UE), a nie bezwzględna granica ubóstwa. Płace i VC pochodzą z dołączonego raportu.'},
+  caveat:{en:'The at-risk rate is a relative EU measure (15.0% in Poland, 20.9% in the EU), not an absolute poverty line. Pay and VC figures are from secondary reporting.',pl:'Wskaźnik zagrożenia to miara względna UE (15,0% w Polsce, 20,9% w UE), a nie bezwzględna granica ubóstwa. Płace i VC pochodzą z opracowań wtórnych.'},
   src:['PL-007','PL-008','PL-146','PL-147']},
 
  /* ---------- 03 SECURITY ---------- */
@@ -451,11 +450,11 @@ var STEPS = [
  {id:'safe', view:'safe', chap:'security',
   kicker:{en:'Feeling safe · April 2026',pl:'Poczucie bezpieczeństwa · kwiecień 2026'},
   title:{en:'89% say Poland is a safe place to live',pl:'89% mówi, że w Polsce żyje się bezpiecznie'},
-  body:{en:'<p>In an April 2026 survey, <b>97% described their own neighbourhood or village as safe and peaceful</b>, and 89% said people live safely in Poland. The share afraid of becoming a crime victim fell five points, to 36%.</p><p>The added report has Poland climbing from 45th to <b>22nd in the 2026 Global Peace Index</b>.</p>',
-        pl:'<p>W badaniu z kwietnia 2026 <b>97% określiło swoją okolicę lub wieś jako bezpieczną i spokojną</b>, a 89% uznało, że w Polsce żyje się bezpiecznie. Odsetek bojących się, że padną ofiarą przestępstwa, spadł o pięć punktów, do 36%.</p><p>Według dołączonego raportu Polska awansowała z 45. na <b>22. miejsce w Global Peace Index 2026</b>.</p>'},
+  body:{en:'<p>In an April 2026 survey, <b>97% described their own neighbourhood or village as safe and peaceful</b>, and 89% said people live safely in Poland. The share afraid of becoming a crime victim fell five points, to 36%.</p><p>Secondary reporting has Poland climbing from 45th to <b>22nd in the 2026 Global Peace Index</b>.</p>',
+        pl:'<p>W badaniu z kwietnia 2026 <b>97% określiło swoją okolicę lub wieś jako bezpieczną i spokojną</b>, a 89% uznało, że w Polsce żyje się bezpiecznie. Odsetek bojących się, że padną ofiarą przestępstwa, spadł o pięć punktów, do 36%.</p><p>Według opracowań wtórnych Polska awansowała z 45. na <b>22. miejsce w Global Peace Index 2026</b>.</p>'},
   charts:[{type:'waffles', title:{en:'Of every 100 adults, April 2026',pl:'Na 100 dorosłych, kwiecień 2026'},
            items:[{v:97,l:{en:'neighbourhood is safe',pl:'okolica bezpieczna'},hl:1},{v:89,l:{en:'Poland is safe',pl:'Polska bezpieczna'},hl:1}]}],
-  caveat:{en:'Perceived safety, not a military assessment. The Peace Index move comes from the added report and still needs checking.',pl:'To poczucie bezpieczeństwa, nie ocena militarna. Awans w Global Peace Index pochodzi z dołączonego raportu i wymaga sprawdzenia.'},
+  caveat:{en:'Perceived safety, not a military assessment. The Peace Index move comes from secondary reporting and still needs checking.',pl:'To poczucie bezpieczeństwa, nie ocena militarna. Awans w Global Peace Index pochodzi z opracowań wtórnych i wymaga sprawdzenia.'},
   src:['PL-108','PL-109','PL-110','PL-172']},
 
  /* ---------- 04 MADE HERE ---------- */
@@ -488,7 +487,7 @@ var STEPS = [
         pl:'<p><b>Solaris</b> dostarczył w 2025 roku 1631 pojazdów do 15 krajów, w 86% nisko- lub zeroemisyjnych, i zdobył wiążące zamówienie na <b>107 trolejbusów dla Vancouver</b>.</p><p>Gry z serii <b>Wiedźmin</b> sprzedały się w 85 mln egzemplarzy, a Cyberpunk 2077 w 35 mln. Dealroom liczy <b>13 jednorożców z siedzibą w Polsce</b>, wartych razem 37,5 mld dolarów.</p>'},
   charts:[{type:'bars', title:{en:'Copies sold, million',pl:'Sprzedane egzemplarze, mln'}, max:90,
            rows:[{l:{en:'The Witcher trilogy',pl:'Trylogia Wiedźmin'},v:85,hl:1},{l:'Cyberpunk 2077',v:35,hl:1},{l:'Phantom Liberty',v:10,hl:1}]}],
-  caveat:{en:'Solaris engineers and builds in Poland but is owned by Spain’s CAF. The unicorn count is a Dealroom snapshot from the added report.',pl:'Solaris projektuje i produkuje w Polsce, ale należy do hiszpańskiego CAF. Liczba jednorożców to migawka Dealroom z dołączonego raportu.'},
+  caveat:{en:'Solaris engineers and builds in Poland but is owned by Spain’s CAF. The unicorn count is a Dealroom snapshot from secondary reporting.',pl:'Solaris projektuje i produkuje w Polsce, ale należy do hiszpańskiego CAF. Liczba jednorożców to migawka Dealroom z opracowań wtórnych.'},
   src:['PL-074','PL-075','PL-076','PL-077','PL-078','PL-156']},
  {id:'orbit', view:'orbit', chap:'made',
   kicker:{en:'Space · June–July 2025',pl:'Kosmos · czerwiec–lipiec 2025'},
@@ -554,7 +553,7 @@ var STEPS = [
         pl:'<p>Na koniec 2025 roku Polska miała około <b>5466 km autostrad i dróg ekspresowych</b>. Prawie 400 km oddano w samym 2025 roku, około <b>1373 km było w budowie</b>, a na 2026 zaplanowano otwarcie 290 km.</p><p>Linie na mapie to uproszczony szkic głównych korytarzy.</p>'},
   charts:[{type:'bars', title:{en:'Kilometres, 2025–2026',pl:'Kilometry, 2025–2026'}, max:5500,
            rows:[{l:{en:'In use, end 2025',pl:'W użyciu, koniec 2025'},v:5466,hl:1},{l:{en:'Under construction',pl:'W budowie'},v:1373},{l:{en:'Opened in 2025',pl:'Oddane w 2025'},v:400,hl:1},{l:{en:'Planned openings 2026',pl:'Plan otwarć 2026'},v:290}]}],
-  caveat:{en:'“Almost 400 km” is rounded; the 2026 plan comes from the added report.',pl:'„Prawie 400 km” to wartość zaokrąglona; plan na 2026 pochodzi z dołączonego raportu.'},
+  caveat:{en:'“Almost 400 km” is rounded; the 2026 plan comes from secondary reporting.',pl:'„Prawie 400 km” to wartość zaokrąglona; plan na 2026 pochodzi z opracowań wtórnych.'},
   src:['PL-083','PL-084','PL-085','PL-162']},
  {id:'transit', view:'transit', chap:'move',
   kicker:{en:'Rail, air and sea · 2025',pl:'Kolej, lotnictwo i morze · 2025'},
@@ -563,7 +562,7 @@ var STEPS = [
         pl:'<p>Pociągi przewiozły w 2025 roku <b>438,97 mln pasażerów</b>, najwięcej od 30 lat. Polskie lotniska obsłużyły <b>66,1 mln pasażerów</b>, samo Lotnisko Chopina 24,1 mln.</p><p>Terminale w Gdańsku przeładowały rekordowe <b>2,8 mln kontenerów</b> (TEU).</p>'},
   charts:[{type:'bars', title:{en:'Growth on 2024',pl:'Wzrost względem 2024'}, max:25, pre:'+', suf:'%', dec:1,
            rows:[{l:{en:'Gdańsk containers',pl:'Kontenery Gdańsk'},v:23,hl:1},{l:{en:'Warsaw Chopin',pl:'Lotnisko Chopina'},v:13,hl:1},{l:{en:'All airports',pl:'Wszystkie lotniska'},v:11.7,hl:1},{l:{en:'Rail passengers',pl:'Pasażerowie kolei'},v:7.7,hl:1}]}],
-  caveat:{en:'Airport figures count passenger movements, not individual travellers. The Chopin figure is from the added report.',pl:'Dane lotnisk liczą odprawy pasażerów, a nie pojedyncze osoby. Dane Lotniska Chopina pochodzą z dołączonego raportu.'},
+  caveat:{en:'Airport figures count passenger movements, not individual travellers. The Chopin figure is from secondary reporting.',pl:'Dane lotnisk liczą odprawy pasażerów, a nie pojedyncze osoby. Dane Lotniska Chopina pochodzą z opracowań wtórnych.'},
   src:['PL-090','PL-091','PL-086','PL-164','PL-096']},
  {id:'travel', view:'travel', chap:'move',
   kicker:{en:'Holidays · 2025',pl:'Wakacje · 2025'},
@@ -682,7 +681,7 @@ var HERO = {
   sub:{en:'Poland today: <em>the best time</em> there has ever been',pl:'Polska dziś: <em>najlepszy czas</em> w historii'},
   lede:{en:'<a class="orig-link" href="https://tomwojcik.com/posts/2026-09-21/september-2026-the-world-today/" target="_blank" rel="noopener">The September essay, “September 2026: The world today, as seen by one Polish guy”</a>, followed one closed strait into fuel, food, bonds and fear. This is the same map in the same autumn, told through the other half of the data: the slow, measurable things that make this the best time Poland has ever had.',
         pl:'<a class="orig-link" href="https://tomwojcik.com/posts/2026-09-21/september-2026-the-world-today/pl/" target="_blank" rel="noopener">Wrześniowy esej „September 2026: The world today, as seen by one Polish guy”</a> poszedł za jedną zamkniętą cieśniną aż do paliwa, jedzenia, obligacji i strachu. To ta sama mapa tej samej jesieni, opowiedziana drugą połową danych: powolnymi, mierzalnymi rzeczami, dzięki którym Polska przeżywa najlepszy czas w swojej historii.'},
-  byline:{en:'Figures as of 1 October 2026 · drawn from 191 evidence cards · every number links to its source',pl:'Dane na 1 października 2026 · na podstawie 191 kart dowodowych · każda liczba ma źródło'},
+  byline:{en:'Figures as of 1 October 2026 · every number links to its source',pl:'Dane na 1 października 2026 · każda liczba ma źródło'},
   kpis:[{v:3.7,dec:1,pre:'+',suf:'%',l:{en:'GDP, Q2 2026',pl:'PKB, II kw. 2026'}},{v:3.1,dec:1,suf:'%',l:{en:'unemployment',pl:'bezrobocie'}},{v:99,suf:'%',l:{en:'gas storage full',pl:'magazyny gazu'}},{v:81,suf:'%',l:{en:'satisfied with life',pl:'zadowolonych z życia'}}],
   src:['PL-136','PL-011','PL-111','PL-012']
 };
@@ -852,7 +851,7 @@ function renderStory(){
       h += '<div class="kicker">'+esc(T(st.kicker))+'</div><h2>'+esc(T(st.title))+'</h2><div class="body">'+T(st.body)+'</div>';
       (st.charts||[]).forEach(function(ch){ h += R[ch.type](ch); });
       if (st.caveat) h += '<p class="caveat" data-label="'+esc(T(UI.caveat).toUpperCase())+'">'+esc(T(st.caveat))+'</p>';
-      if (st.type==='outro') h += '<div class="btns"><a class="btn" href="'+ORIGINAL_URL+(lang==='pl'?'pl/':'')+'" target="_blank" rel="noopener">'+esc(T(UI.readOrig))+' ↗</a><a class="btn btn--ghost" href="poland_positive_content_library_merged.html">'+esc(T(UI.explore))+' →</a></div>';
+      if (st.type==='outro') h += '<div class="btns"><a class="btn" href="'+ORIGINAL_URL+(lang==='pl'?'pl/':'')+'" target="_blank" rel="noopener">'+esc(T(UI.readOrig))+' ↗</a></div>';
       h += metaFor(st.src);
     }
     h += '</div></section>';
