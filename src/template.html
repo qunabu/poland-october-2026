@@ -41,7 +41,7 @@ a{color:inherit}
 ::selection{background:var(--pl);color:#fff}
 
 /* ---------- stage: the map behind everything ---------- */
-#stage{position:fixed;inset:0;z-index:0;overflow:hidden;background:radial-gradient(120% 90% at 70% 40%,#070b12 0%,#000 70%)}
+#stage{position:fixed;top:0;left:0;right:0;height:100vh;z-index:0;overflow:hidden;background:radial-gradient(120% 90% at 70% 40%,#070b12 0%,#000 70%)}
 #map,#fx{position:absolute;inset:0;width:100%;height:100%;display:block}
 #map .grat path{fill:none;stroke:rgba(255,255,255,.05);stroke-width:1;vector-effect:non-scaling-stroke}
 #map .land path{fill:var(--land);stroke:var(--land-edge);stroke-width:.6;vector-effect:non-scaling-stroke;transition:fill .9s ease,stroke .9s ease}
@@ -315,7 +315,7 @@ var BADGES = {
   programme:{en:'Programme',pl:'Program'}, verified_role:{en:'Verified',pl:'Potwierdzone'}, historical_credit:{en:'Historical record',pl:'Zapis historyczny'},
   calculation:{en:'Calculated',pl:'Wyliczone'}, reported_news:{en:'Press report',pl:'Doniesienia prasowe'}, university_report:{en:'University data',pl:'Dane uczelni'},
   pilot:{en:'Pilot',pl:'Pilotaż'}, project_exists:{en:'Project',pl:'Projekt'}, announced_schedule:{en:'Schedule',pl:'Rozkład'},
-  announced_transaction:{en:'Announced',pl:'Ogłoszone'}, industry_report:{en:'Industry data',pl:'Dane branży'}, essay:{en:'Essay',pl:'Esej'}
+  announced_transaction:{en:'Announced',pl:'Ogłoszone'}, industry_report:{en:'Industry data',pl:'Dane branży'}, essay:{en:'Essay',pl:'Esej'}, imf_infographic:{en:'IMF data via infographic',pl:'Dane MFW z infografiki'}
 };
 
 /* =====================================================================
@@ -384,6 +384,18 @@ var STEPS = [
            rows:[{l:{en:'Germany',pl:'Niemcy'},v:115},{l:{en:'Czechia',pl:'Czechy'},v:92},{l:{en:'Spain',pl:'Hiszpania'},v:92},{l:{en:'Poland',pl:'Polska'},v:81,hl:1},{l:{en:'Portugal',pl:'Portugalia'},v:81},{l:{en:'Hungary',pl:'Węgry'},v:76},{l:{en:'Greece',pl:'Grecja'},v:68}]}],
   caveat:{en:'PPS measures output adjusted for price levels, not wages or a complete living-standards ranking.',pl:'PPS mierzy produkcję skorygowaną o poziom cen, a nie płace ani pełny ranking poziomu życia.'},
   src:['PL-002','PL-003']},
+ {id:'eight', view:'eight', chap:'money',
+  kicker:{en:'Size of the economy · IMF 2025',pl:'Wielkość gospodarki · MFW 2025'},
+  title:{en:'Poland’s economy is as large as these eight countries combined',pl:'Polska gospodarka jest tak duża jak tych osiem krajów razem'},
+  body:{en:'<p>IMF figures for 2025 put Polish GDP at <b>$1.036 trillion</b>. Estonia, Latvia, Lithuania, Belarus, Ukraine, Moldova, Romania and Bulgaria together come to <b>$1.076 trillion</b>.</p><p>Those eight countries have more than twice as many people, 77.5 million against 36.4 million. So each Pole produces about <b>twice as much</b>: $27.6k of GDP per person against $13.9k.</p>',
+        pl:'<p>Według danych MFW za 2025 rok PKB Polski wynosi <b>1,036 bln dolarów</b>. Estonia, Łotwa, Litwa, Białoruś, Ukraina, Mołdawia, Rumunia i Bułgaria razem mają <b>1,076 bln dolarów</b>.</p><p>Te osiem krajów ma ponad dwa razy więcej ludzi, 77,5 mln wobec 36,4 mln. Na jednego Polaka przypada więc mniej więcej <b>dwa razy więcej</b>: 27,6 tys. dolarów PKB na osobę wobec 13,9 tys.</p>'},
+  charts:[{type:'bars', title:{en:'GDP, US$ trillion, 2025',pl:'PKB, bln US$, 2025'}, max:1.2, dec:3, pre:{en:'$',pl:''}, suf:{en:'T',pl:' bln $'},
+           rows:[{l:{en:'Poland',pl:'Polska'},v:1.036,hl:1},{l:{en:'Eight countries',pl:'Osiem krajów'},v:1.076}]},
+          {type:'bars', title:{en:'GDP per person, US$ thousand',pl:'PKB na osobę, tys. US$'}, max:30, dec:1, pre:{en:'$',pl:''}, suf:{en:'k',pl:' tys. $'},
+           rows:[{l:{en:'Poland',pl:'Polska'},v:27.6,hl:1},{l:{en:'Eight countries',pl:'Osiem krajów'},v:13.9}]}],
+  caveat:{en:'Nominal GDP in US dollars at market exchange rates, IMF estimates for 2025 as compiled by The World in Maps. Exchange-rate swings can move this comparison noticeably from year to year.',
+          pl:'Nominalny PKB w dolarach po rynkowych kursach walut, szacunki MFW na 2025 w zestawieniu The World in Maps. Wahania kursów mogą z roku na rok wyraźnie zmieniać to porównanie.'},
+  src:['IMF25','PL-137']},
  {id:'growth', view:'growth', chap:'money',
   kicker:{en:'Growth · Q2 2026',pl:'Wzrost · II kw. 2026'},
   title:{en:'Growing three times faster than the EU',pl:'Rośniemy trzy razy szybciej niż UE'},
@@ -953,6 +965,7 @@ var VIEWS = {
   offshore: {bb:[[13.2,49.6],[24.2,56.2]], hi:{'616':'hi'}},
   food:     {bb:[[-9,37],[33,59]], hi:{'616':'hi','276':'hi2','528':'hi2','826':'hi2','250':'hi2','380':'hi2','203':'hi2'}},
   eurochips:{bb:[[-10.5,35.5],[29,58.5]], hi:{'616':'hi','276':'hi2','203':'hi2','724':'hi2','620':'hi2','348':'hi2','300':'hi2'}},
+  eight:    {bb:[[12.5,41.2],[41,60]], mbb:[[13,41.5],[40.5,59.6]], hi:{'616':'hi','233':'hi2','428':'hi2','440':'hi2','112':'hi2','804':'hi2','498':'hi2','642':'hi2','100':'hi2'}},
   growth:   {bb:[[-125,20],[42,63]], hi:{'616':'hi','840':'hi2'}, euHi:true},
   flank:    {bb:[[7,41],[37,69.5]], hi:{'616':'hi','246':'hi2','233':'hi2','428':'hi2','440':'hi2','703':'hi2','348':'hi2','642':'hi2','100':'hi2'}},
   defence:  {bb:[[11,36],[31,60.5]], hi:{'616':'hi','233':'hi2','428':'hi2','440':'hi2','300':'hi2'}},
@@ -993,7 +1006,9 @@ route(['gas'], line([[-6,50.2],[-2.5,50.0],[1.4,50.95],[3.4,52.0],[5.6,54.0],[7.
 route(['offshore'], line([[17.62,54.98],[17.55,54.75],[17.5,54.55]]), {n:5, sp:.15});
 // food exports
 [[10.4,51.1],[5.3,52.2],[-1.6,52.6],[2.4,46.9],[12.4,43.2],[15.4,49.8],[24,56.8],[-8,40]].forEach(function(d,i){ route(['food'], arc([19.4,52.1],d,.2), {n:5, sp:.08+i*.006, w:1}); });
-// growth: Warsaw to Washington arc
+// eight countries: each one streams into a single total
+var EIGHT=[[25.5,58.7],[25.4,56.9],[23.9,55.3],[28.0,53.5],[31.0,49.3],[28.5,47.2],[24.9,45.9],[25.3,42.7]], EIGHT_SUM=[33.2,43.7];
+EIGHT.forEach(function(c,i){ route(['eight'], arc(c,EIGHT_SUM,.12), {n:4, sp:.09+i*.007, w:.9, color:'190,202,220', size:2}); });
 // security: Eastern Sentry and Baltic Sentry
 route(['flank'], line([[27.8,59.4],[27.6,57.6],[28.1,56.1],[26.6,55.6],[25.2,54.0],[23.6,53.95],[23.9,53.1],[23.2,52.3],[23.6,51.6],[24.1,50.8],[22.7,49.2],[24.9,47.9],[26.6,48.25],[28.1,46.6],[28.6,44.6],[28.0,43.4]]), {n:18, sp:.02, color:'255,255,255', size:2, dash:[3,4]});
 route(['flank'], line([[10.9,54.6],[13.8,55.0],[16.5,55.6],[19.0,56.8],[20.6,58.6],[23.0,59.6],[26.5,60.0],[24.0,59.3],[21.2,57.5],[19.6,55.9],[17.2,55.1],[14.3,54.6],[10.9,54.6]]), {n:10, sp:.025, color:'255,255,255', size:2, dash:[3,4]});
@@ -1024,7 +1039,7 @@ route(['orbit'], ORB, {n:1, sp:.018, w:.8, color:'255,255,255', size:4});
 
 /* markers */
 var MARKERS = [];
-function mk(v, ll, name, tip, o){ o=o||{}; MARKERS.push({v:v, ll:ll, b:P(ll), name:name, tip:tip, kind:o.kind||'dot', chip:o.chip, la:o.la||'r', sz:o.sz||1, a:0}); }
+function mk(v, ll, name, tip, o){ o=o||{}; MARKERS.push({v:v, ll:ll, b:P(ll), name:name, tip:tip, kind:o.kind||'dot', chip:o.chip, la:o.la||'r', sz:o.sz||1, ctx:o.ctx, a:0}); }
 mk(['gas'], [15.07,54.1], {en:'Niechorze',pl:'Niechorze'}, {en:'Baltic Pipe comes ashore here: up to 10 bcm a year from the Norwegian shelf, operating since October 2022.',pl:'Tu Baltic Pipe wychodzi na ląd: do 10 mld m³ rocznie z norweskiego szelfu, od października 2022.'}, {kind:'ring', la:'r'});
 mk(['gas'], [14.27,53.91], {en:'Świnoujście LNG',pl:'LNG Świnoujście'}, {en:'Expanded to 8.3 bcm a year from January 2025. Tankers arrive through the North Sea and the Danish straits, not Hormuz.',pl:'Rozbudowany do 8,3 mld m³ rocznie od stycznia 2025. Tankowce płyną przez Morze Północne i cieśniny duńskie, nie przez Ormuz.'}, {kind:'ring', la:'b'});
 mk(['gas'], [5.5,59.28], {en:'Norwegian shelf',pl:'Szelf norweski'}, {en:'Where the gas for Baltic Pipe comes from.',pl:'Stąd pochodzi gaz dla Baltic Pipe.'}, {la:'r'});
@@ -1035,6 +1050,8 @@ mk(['offshore'], [21.01,52.23], {en:'Warsaw',pl:'Warszawa'}, {en:'Coal’s share
 mk(['food'], [19.4,52.1], {en:'Poland',pl:'Polska'}, {en:'Agri-food exports €58.4bn in 2025, surplus €19.8bn.',pl:'Eksport rolno-spożywczy 58,4 mld € w 2025, nadwyżka 19,8 mld €.'}, {kind:'ring', la:'b'});
 [['276',[10.4,51.1],115,'b'],['203',[15.4,49.75],92,'b'],['724',[-3.7,40.0],92,'b'],['616',[19.4,52.1],81,'b'],['620',[-8.2,39.6],81,'b'],['348',[19.4,47.1],76,'b'],['300',[22.0,39.4],68,'b']].forEach(function(r){
   mk(['eurochips'], r[1], '', {en:'GDP per person in PPS, 2025: '+r[2]+' (EU = 100).',pl:'PKB na osobę w PPS, 2025: '+r[2]+' (UE = 100).'}, {kind:'chip', chip:String(r[2]), ctx:r[0]!=='616'}); });
+mk(['eight'], [19.4,52.1], {en:'Poland',pl:'Polska'}, {en:'GDP $1.036 trillion, 36.4 million people, $27.6k per person (IMF, 2025).',pl:'PKB 1,036 bln $, 36,4 mln ludzi, 27,6 tys. $ na osobę (MFW, 2025).'}, {kind:'chip', chip:{en:'$1.036T',pl:'1,036 bln $'}});
+mk(['eight'], EIGHT_SUM, {en:'Eight countries',pl:'Osiem krajów'}, {en:'Estonia, Latvia, Lithuania, Belarus, Ukraine, Moldova, Romania and Bulgaria: $1.076 trillion, 77.5 million people, $13.9k per person (IMF, 2025).',pl:'Estonia, Łotwa, Litwa, Białoruś, Ukraina, Mołdawia, Rumunia i Bułgaria: 1,076 bln $, 77,5 mln ludzi, 13,9 tys. $ na osobę (MFW, 2025).'}, {kind:'chip', chip:{en:'$1.076T',pl:'1,076 bln $'}, ctx:1});
 mk(['growth'], [19.4,52.1], {en:'Poland',pl:'Polska'}, {en:'GDP +3.7% year on year in Q2 2026, the seventh quarter of growth in a row.',pl:'PKB +3,7% r/r w II kw. 2026, siódmy kwartał wzrostu z rzędu.'}, {kind:'chip', chip:'+3.7%'});
 mk(['growth'], [4.4,50.85], {en:'EU',pl:'UE'}, {en:'EU GDP +1.2% in Q2 2026.',pl:'PKB UE +1,2% w II kw. 2026.'}, {kind:'chip', chip:'+1.2%', ctx:1});
 mk(['growth'], [-98,39], {en:'United States',pl:'USA'}, {en:'US GDP +2.1% in Q2 2026.',pl:'PKB USA +2,1% w II kw. 2026.'}, {kind:'chip', chip:'+2.1%', ctx:1});
@@ -1068,6 +1085,7 @@ mk(['transit'], [18.7,54.4], {en:'Port of Gdańsk',pl:'Port Gdańsk'}, {en:'80.4
 mk(['krakow'], C.kra, {en:'Kraków',pl:'Kraków'}, {en:'All eight stations met the annual PM10 limit in 2023 and 2024. Coal and wood banned in boilers and fireplaces since 2019.',pl:'Wszystkie osiem stacji spełniło roczną normę PM10 w 2023 i 2024. Zakaz węgla i drewna w kotłach i kominkach od 2019.'}, {kind:'ring', la:'r', sz:1.6});
 mk(['krakow'], [19.93,50.01], {en:'Bujaka station',pl:'Stacja Bujaka'}, {en:'PM10 days over the limit: 78 in 2016, 23 in 2024.',pl:'Dni z przekroczeniem PM10: 78 w 2016, 23 w 2024.'}, {la:'b'});
 
+var LABELS_EIGHT = [[{en:'Estonia',pl:'Estonia'},[25.8,58.75]],[{en:'Latvia',pl:'Łotwa'},[25.6,56.85]],[{en:'Lithuania',pl:'Litwa'},[23.6,55.45]],[{en:'Belarus',pl:'Białoruś'},[27.9,53.7]],[{en:'Ukraine',pl:'Ukraina'},[30.6,49.6]],[{en:'Moldova',pl:'Mołdawia'},[28.4,47.3]],[{en:'Romania',pl:'Rumunia'},[24.6,45.9]],[{en:'Bulgaria',pl:'Bułgaria'},[25.2,42.7]]];
 var LABELS = [
   {t:{en:'Baltic Sea',pl:'Morze Bałtyckie'}, ll:[18.6,55.7], w:1, v:['gas','offshore','yards','solar','digital','roads','transit','health','people','safe']},
   {t:{en:'North Sea',pl:'Morze Północne'}, ll:[3.6,56.4], w:1, v:['gas','food','eurobiz']},
@@ -1079,6 +1097,7 @@ var LABELS = [
   {t:{en:'Belarus',pl:'Białoruś'}, ll:[27.8,53.4], v:['home']}, {t:{en:'Russia',pl:'Rosja'}, ll:[33.5,57.2], v:['flank']},
   {t:{en:'Kaliningrad',pl:'Obwód królewiecki'}, ll:[21.2,54.75], v:['flank','safe']}
 ];
+LABELS_EIGHT.forEach(function(l){ LABELS.push({t:l[0], ll:l[1], v:['eight']}); });
 CITIES.forEach(function(c){ if (NAMES[c[0]]) LABELS.push({t:NAMES[c[0]], ll:C[c[0]], city:1, v:['solar','digital','roads','safe','health','people']}); });
 LABELS.forEach(function(l){ l.b=P(l.ll); l.a=0; });
 
@@ -1095,7 +1114,14 @@ var solarA=0, citiesA=0;
 /* ---------- camera ---------- */
 var stage=$('#stage'), canvas=$('#fx'), ctx=canvas.getContext('2d'), tipEl=$('#tip');
 var W=0, H=0, DPR=1, cur=null, tx=0, ty=0, active='home', flyTok=0;
-function measure(){ W=innerWidth; H=innerHeight; DPR=Math.min(2,window.devicePixelRatio||1); canvas.width=W*DPR; canvas.height=H*DPR; }
+var layoutW=0, layoutH=0;
+function measure(){ var w=innerWidth, h=innerHeight;
+  // Mobile browsers change innerHeight while the address bar slides in and out during a scroll. Re-framing the map on
+  // each of those resizes made it zoom and snap back, so a height-only change under 160px keeps the tallest layout.
+  if (w===layoutW && layoutH && Math.abs(h-layoutH)<160) h=Math.max(h,layoutH);
+  var changed = w!==layoutW || h!==layoutH; layoutW=w; layoutH=h; W=w; H=h;
+  if (changed){ stage.style.height=H+'px'; DPR=Math.min(2,window.devicePixelRatio||1); canvas.width=W*DPR; canvas.height=H*DPR; }
+  return changed; }
 function focusRect(name){
   if (W<900) return name==='orbit' ? {x:8,y:60,w:W-16,h:H*0.42} : {x:16,y:64,w:W-32,h:H*0.40};
   var left = Math.min(W*0.44, 560); if (name==='home') return {x:W*0.36,y:H*0.06,w:W*0.6,h:H*0.6};
@@ -1186,9 +1212,9 @@ function drawFrame(now){
   // markers
   MARKERS.forEach(function(m){ m.a=approach(m.a, m.v.indexOf(active)>=0?1:0, dt); if (m.a<.02) return; var p=S(m.b), x=p[0], y=p[1], al=m.a; m.sx=x; m.sy=y;
     var rgb = m.ctx ? '125,138,160' : '240,58,78';
-    if (m.kind==='chip'){ ctx.font='500 13px "JetBrains Mono",monospace'; if (hasLS) ctx.letterSpacing='0px'; var tw=ctx.measureText(m.chip).width+18;
+    if (m.kind==='chip'){ ctx.font='500 13px "JetBrains Mono",monospace'; if (hasLS) ctx.letterSpacing='0px'; var ct=T(m.chip), tw=ctx.measureText(ct).width+18;
       ctx.fillStyle='rgba(0,0,0,'+(.85*al)+')'; ctx.fillRect(x-tw/2,y-12,tw,24); ctx.strokeStyle='rgba('+rgb+','+al+')'; ctx.lineWidth=1.2; ctx.strokeRect(x-tw/2+.5,y-11.5,tw-1,23);
-      ctx.fillStyle='rgba(255,255,255,'+al+')'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(m.chip,x,y+.5); m.hr=tw/2;
+      ctx.fillStyle='rgba(255,255,255,'+al+')'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(ct,x,y+.5); m.hr=tw/2;
       if (T(m.name)) label(T(m.name).toUpperCase(), x, y+22, 'center', al*.75, {size:10, ls:2}); return; }
     var ph=(((clock*.6+m.b[0]*.001)%1)+1)%1;
     if (m.kind==='ring'||m.kind==='shield'){ var R0=(m.kind==='shield'?7:8)*m.sz;
@@ -1223,12 +1249,15 @@ stage.addEventListener('click', function(e){ var m=hit(e.clientX,e.clientY); if 
 var stepEls=[], curStep=-1;
 function collect(){ stepEls=$$('.step'); }
 function pick(instant){
-  var vh=innerHeight, idx=0;
-  for (var i=0;i<stepEls.length;i++){ var r=stepEls[i].querySelector('.card').getBoundingClientRect(); if (r.top < vh*0.72) idx=i; }
+  // Hysteresis: a card takes over when its top rises above 70% of the screen, but the story only goes back once the
+  // current card has dropped below 88%. Without the gap, a small bounce at the threshold flew the map away and back.
+  var vh=H||innerHeight, idx=0;
+  for (var i=0;i<stepEls.length;i++){ var r=stepEls[i].querySelector('.card').getBoundingClientRect(); if (r.top < vh*0.70) idx=i; }
+  if (curStep>=0 && idx<curStep && !instant){ var rc=stepEls[curStep].querySelector('.card').getBoundingClientRect(); if (rc.top < vh*0.88) idx=curStep; }
   var se=document.scrollingElement, max=se.scrollHeight-vh; $('#progress').style.width=(max>0?se.scrollTop/max*100:0)+'%';
   if (idx===curStep) return; curStep=idx;
   var st=stepEls[idx], view=st.getAttribute('data-view'), chap=st.getAttribute('data-chap');
-  stage.setAttribute('data-hero', idx===0?'1':'0');
+  stage.setAttribute('data-hero', idx===0?'1':'0'); stage.setAttribute('data-step', st.id);
   if (view!==active || instant) setView(view, instant);
   runFigures(st);
   $$('#nav a').forEach(function(a){ a.classList.toggle('on', a.getAttribute('data-chap')===chap); });
@@ -1237,7 +1266,7 @@ function pick(instant){
 }
 var ticking=false;
 addEventListener('scroll', function(){ pick(); }, {passive:true});
-addEventListener('resize', function(){ measure(); if (cur) apply(viewFor(active)); });
+addEventListener('resize', function(){ if (measure() && cur){ flyTok++; apply(viewFor(active)); } });
 
 /* T+ clock since EU accession */
 function tick(){

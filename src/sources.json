@@ -1970,5 +1970,15 @@
 "https://tomwojcik.com/posts/2026-09-21/september-2026-the-world-today/"
 ]
 ]
+},
+"IMF25": {
+"st": "imf_infographic",
+"p": "2025",
+"s": [
+[
+"IMF World Economic Outlook: GDP, current prices (compiled by The World in Maps)",
+"https://www.imf.org/external/datamapper/NGDPD@WEO"
+]
+]
 }
 }
